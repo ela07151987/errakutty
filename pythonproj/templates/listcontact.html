@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+<title>Requested Contact Details:</title>
+<h3>Requested Contact Details:</h3>
+</head>
+<body>
+<p>{{index.Name}}</p>
+<p>{{index.Contact}}</p>
+<p>{{index.Place}}</p>
+<p>{{index.Details}}</p>
+<p>
+<div style='float: right;'> <a href="{{ url_for('welcome') }}" >
+   HOME
+</a></div>
+</p>
+<p>
+<button>
+	{% if indx < indx_max %}
+	<a href="{{ url_for('contact', indx=indx + 1) }}">
+		NEXT
+	</a>
+	{% else %}
+	<a href="{{ url_for('contact', indx=0) }}">
+		START OVER
+	</a>
+	{% endif %}	
+</button>
+</p>
+<a href="{{ url_for('remove_con',indx=indx) }}" >
+  DELETE
+</a>
+</body>
+</html>

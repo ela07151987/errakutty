@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Remove Contacts</title>
+</head>
+<body>
+<h2>Remove Contact</h2>
+	<p>
+	Name:{{indx.Name}} <br>
+	Contact:{{indx.Contact}} <br>
+	Place:{{indx.Place}} <br>
+	Details:{{indx.Details}}
+	<h3>Are you sure?</h3>
+	<form method="post">
+	<button type="submit">YES</button>
+	<a href="{{ url_for('welcome') }}">NO</a>
+	</form>
+</body>
+</html>

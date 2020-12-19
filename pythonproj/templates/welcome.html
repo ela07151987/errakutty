@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}WELCOME{% endblock %}
+{% block content %}
+<center>
+<h1 style="color:red;"> <b>ANNI AMMAN THUNAI</b> </h1>
+</center>
+<p>This web page will have contact details errakutti family members, You can add or delete the contact with admin access</p>
+<p>{{message}}</p>
+<div style='float: right;'> <a href="{{ url_for('event') }}" >
+   EVENT
+</a></div>
+</p>
+<p>&nbsp;</p>
+<div style='float: right;'> <a href="{{ url_for('contact', indx=0 + 1) }}" >
+   CONTACTS
+</a></div>
+<p>&nbsp;</p>
+<div style='float: right;'> <a href="{{ url_for('add_con') }}" >
+   ADD CONTACTS
+</a></div>
+<p>HELP!</p>
+<ul>
+{% for ind in indxs %}
+	<li>
+	    <a href="{{ url_for('contact', indx=0) }}" >   
+		{{ ind.Name }}
+		</a></div>
+	</li>
+{% endfor %}
+</ul>
+<center>
+    <img src="/static/godpic.jpg" width="350" height="350" alt="centered image">
+</center>
+<footer>
+  <p>Author: Elavarasan Shanmugam</p>
+  <p><a href="mailto:anniammanthunai@gmail.com">anniammanthunai@gmail.com</a></p>
+</footer>
+{% endblock %}
+
+
